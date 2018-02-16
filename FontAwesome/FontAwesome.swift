@@ -78,7 +78,6 @@ public extension UIImage {
         
         let fontSize = min(size.width / FontAwesomeConfig.fontAspectRatio, size.height)
         
-        print(fontSize)
         // stroke width expects a whole number percentage of the font size
         let strokeWidth: CGFloat = fontSize == 0 ? 0 : (-100 * borderWidth / fontSize)
         let font:UIFont = UIFont(name: FontNames.awesomeRegular, size: fontSize)!
@@ -115,6 +114,39 @@ public extension UIImage {
         // stroke width expects a whole number percentage of the font size
         let strokeWidth: CGFloat = fontSize == 0 ? 0 : (-100 * borderWidth / fontSize)
         let font:UIFont = UIFont(name: FontNames.awesomeSolid, size: fontSize)!
+        
+        let attributedString = NSAttributedString(string:name.rawValue , attributes: [
+            // NSAttributedStringKey.font: UIFont.fontAwesome,
+            NSAttributedStringKey.font: font,
+            NSAttributedStringKey.foregroundColor: textColor,
+            NSAttributedStringKey.backgroundColor: backgroundColor,
+            NSAttributedStringKey.paragraphStyle: paragraph,
+            NSAttributedStringKey.strokeWidth: strokeWidth,
+            NSAttributedStringKey.strokeColor: borderColor
+            ])
+        
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        attributedString.draw(in: CGRect(x: 0, y: (size.height - fontSize) / 2, width: size.width, height: fontSize))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
+    
+    public static func fontAwesomeIcon(name: AwesomeBrand, textColor: UIColor, size: CGSize, backgroundColor: UIColor = UIColor.clear, borderWidth: CGFloat = 0, borderColor: UIColor = UIColor.clear) -> UIImage {
+        
+        // Prevent application crash when passing size where width or height is set equal to or less than zero, by clipping width and height to a minimum of 1 pixel.
+        var size = size
+        if size.width <= 0 { size.width = 1 }
+        if size.height <= 0 { size.height = 1 }
+        
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.alignment = NSTextAlignment.center
+        
+        let fontSize = min(size.width / FontAwesomeConfig.fontAspectRatio, size.height)
+        
+        // stroke width expects a whole number percentage of the font size
+        let strokeWidth: CGFloat = fontSize == 0 ? 0 : (-100 * borderWidth / fontSize)
+        let font:UIFont = UIFont(name: FontNames.awesomeBrand, size: fontSize)!
         
         let attributedString = NSAttributedString(string:name.rawValue , attributes: [
             // NSAttributedStringKey.font: UIFont.fontAwesome,

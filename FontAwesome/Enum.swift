@@ -14,6 +14,8 @@ public enum Awesome: String{
     
     case clock = "\u{f017}"
     
+    case clone = "\u{f24d}"
+    
     case heart = "\u{f004}"
     
     
@@ -37,4 +39,16 @@ public enum AwesomeSolid:String {
     case angleDown = "\u{f107}"
     
     case search = "\u{f002}"
+    
+    case ellipsisV = "\u{f142}"
+    
+}
+
+public enum AwesomeBrand: String {
+    case line = "\u{f3c0}"
+    
+    case facebook = "\u{f09a}"
+    
+    case twitter = "\u{f099}"
+    
 }
