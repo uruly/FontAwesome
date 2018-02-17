@@ -18,24 +18,7 @@ public struct FontAwesomeConfig {
 
 public class FontAwesome: NSObject {
     
-    public func icon(_ icon:Awesome,text:String,size:CGFloat,defaultFont:UIFont) -> NSAttributedString {
-        let font:UIFont = UIFont(name: FontNames.awesomeRegular, size: defaultFont.pointSize)!
-        //let defaultFont = UIFont.systemFont(ofSize: size)
-        let mutableAttributedString = NSMutableAttributedString()
-        
-        let icon = NSAttributedString(string:icon.rawValue , attributes: [
-            // NSAttributedStringKey.font: UIFont.fontAwesome,
-            NSAttributedStringKey.font: font
-            ])
-        let text = NSAttributedString(string:text,attributes: [
-            NSAttributedStringKey.font: defaultFont
-            ])
-        mutableAttributedString.append(icon)
-        mutableAttributedString.append(text)
-        return mutableAttributedString
-    }
-    
-    public func icon(text:String,icon:Awesome,size:CGFloat,defaultFont:UIFont) -> NSAttributedString {
+    public func icon(_ icon:Awesome,text:String,size:CGFloat,defaultFont:UIFont,color:UIColor = .black) -> NSAttributedString {
         let font:UIFont = UIFont(name: FontNames.awesomeRegular, size: defaultFont.pointSize)!
         //let defaultFont = UIFont.systemFont(ofSize: size)
         let mutableAttributedString = NSMutableAttributedString()
@@ -43,22 +26,44 @@ public class FontAwesome: NSObject {
         let icon = NSAttributedString(string:icon.rawValue , attributes: [
             // NSAttributedStringKey.font: UIFont.fontAwesome,
             NSAttributedStringKey.font: font,
+            NSAttributedStringKey.foregroundColor:color
+            ])
+        let text = NSAttributedString(string:text,attributes: [
+            NSAttributedStringKey.font: defaultFont,
+            NSAttributedStringKey.foregroundColor:color
+            ])
+        mutableAttributedString.append(icon)
+        mutableAttributedString.append(text)
+        return mutableAttributedString
+    }
+    
+    public func icon(text:String,icon:Awesome,size:CGFloat,defaultFont:UIFont,color:UIColor = .black) -> NSAttributedString {
+        let font:UIFont = UIFont(name: FontNames.awesomeRegular, size: defaultFont.pointSize)!
+        //let defaultFont = UIFont.systemFont(ofSize: size)
+        let mutableAttributedString = NSMutableAttributedString()
+        
+        let icon = NSAttributedString(string:icon.rawValue , attributes: [
+            // NSAttributedStringKey.font: UIFont.fontAwesome,
+            NSAttributedStringKey.font: font,
+            NSAttributedStringKey.foregroundColor:color
             ])
         let text = NSAttributedString(string:text,attributes: [
             // NSAttributedStringKey.font: UIFont.fontAwesome,
             NSAttributedStringKey.font: defaultFont,
+            NSAttributedStringKey.foregroundColor:color
             ])
         mutableAttributedString.append(text)
         mutableAttributedString.append(icon)
         return mutableAttributedString
     }
     
-    public func icon(_ name:Awesome,size:CGFloat) -> NSAttributedString {
+    public func icon(_ name:Awesome,size:CGFloat,color:UIColor = .black) -> NSAttributedString {
         let font:UIFont = UIFont(name: FontNames.awesomeRegular, size: size)!
         
         let attributedString = NSAttributedString(string:name.rawValue , attributes: [
             // NSAttributedStringKey.font: UIFont.fontAwesome,
             NSAttributedStringKey.font: font,
+            NSAttributedStringKey.foregroundColor:color
             ])
         return attributedString
     }
