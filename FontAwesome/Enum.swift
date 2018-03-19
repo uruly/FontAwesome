@@ -42,6 +42,10 @@ public enum AwesomeSolid:String {
     
     case ellipsisV = "\u{f142}"
     
+    case home = "\u{f015}"
+    
+    case heart = "\u{f004}"
+    
 }
 
 public enum AwesomeBrand: String {
