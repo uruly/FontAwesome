@@ -46,6 +46,8 @@ public enum AwesomeSolid:String {
     
     case heart = "\u{f004}"
     
+    case times = "\u{f00d}"
+    
 }
 
 public enum AwesomeBrand: String {
