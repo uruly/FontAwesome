@@ -18,6 +18,8 @@ public enum Awesome: String{
     
     case heart = "\u{f004}"
     
+    case folderOpen = "\u{f07c}"
+    
     
 }
 public enum AwesomeSolid:String {
