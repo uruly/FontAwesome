@@ -24,12 +24,12 @@ public class FontAwesome: NSObject {
         
         let icon = NSAttributedString(string:icon , attributes: [
             // NSAttributedStringKey.font: UIFont.fontAwesome,
-            NSAttributedStringKey.font: font,
-            NSAttributedStringKey.foregroundColor:color
+            NSAttributedString.Key.font: font,
+            NSAttributedString.Key.foregroundColor:color
             ])
         let text = NSAttributedString(string:text,attributes: [
-            NSAttributedStringKey.font: defaultFont,
-            NSAttributedStringKey.foregroundColor:color
+            NSAttributedString.Key.font: defaultFont,
+            NSAttributedString.Key.foregroundColor:color
             ])
         mutableAttributedString.append(icon)
         mutableAttributedString.append(text)
@@ -43,13 +43,13 @@ public class FontAwesome: NSObject {
         
         let icon = NSAttributedString(string:icon , attributes: [
             // NSAttributedStringKey.font: UIFont.fontAwesome,
-            NSAttributedStringKey.font: font,
-            NSAttributedStringKey.foregroundColor:color
+            NSAttributedString.Key.font: font,
+            NSAttributedString.Key.foregroundColor:color
             ])
         let text = NSAttributedString(string:text,attributes: [
             // NSAttributedStringKey.font: UIFont.fontAwesome,
-            NSAttributedStringKey.font: defaultFont,
-            NSAttributedStringKey.foregroundColor:color
+            NSAttributedString.Key.font: defaultFont,
+            NSAttributedString.Key.foregroundColor:color
             ])
         mutableAttributedString.append(text)
         mutableAttributedString.append(icon)
@@ -60,8 +60,8 @@ public class FontAwesome: NSObject {
         
         let attributedString = NSAttributedString(string:name , attributes: [
             // NSAttributedStringKey.font: UIFont.fontAwesome,
-            NSAttributedStringKey.font: font,
-            NSAttributedStringKey.foregroundColor:color
+            NSAttributedString.Key.font: font,
+            NSAttributedString.Key.foregroundColor:color
             ])
         return attributedString
     }
@@ -118,12 +118,12 @@ public extension UIImage {
         
         let attributedString = NSAttributedString(string:name.rawValue , attributes: [
            // NSAttributedStringKey.font: UIFont.fontAwesome,
-            NSAttributedStringKey.font: font,
-            NSAttributedStringKey.foregroundColor: textColor,
-            NSAttributedStringKey.backgroundColor: backgroundColor,
-            NSAttributedStringKey.paragraphStyle: paragraph,
-            NSAttributedStringKey.strokeWidth: strokeWidth,
-            NSAttributedStringKey.strokeColor: borderColor
+            NSAttributedString.Key.font: font,
+            NSAttributedString.Key.foregroundColor: textColor,
+            NSAttributedString.Key.backgroundColor: backgroundColor,
+            NSAttributedString.Key.paragraphStyle: paragraph,
+            NSAttributedString.Key.strokeWidth: strokeWidth,
+            NSAttributedString.Key.strokeColor: borderColor
             ])
         
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
@@ -151,12 +151,12 @@ public extension UIImage {
         
         let attributedString = NSAttributedString(string:name.rawValue , attributes: [
             // NSAttributedStringKey.font: UIFont.fontAwesome,
-            NSAttributedStringKey.font: font,
-            NSAttributedStringKey.foregroundColor: textColor,
-            NSAttributedStringKey.backgroundColor: backgroundColor,
-            NSAttributedStringKey.paragraphStyle: paragraph,
-            NSAttributedStringKey.strokeWidth: strokeWidth,
-            NSAttributedStringKey.strokeColor: borderColor
+            NSAttributedString.Key.font: font,
+            NSAttributedString.Key.foregroundColor: textColor,
+            NSAttributedString.Key.backgroundColor: backgroundColor,
+            NSAttributedString.Key.paragraphStyle: paragraph,
+            NSAttributedString.Key.strokeWidth: strokeWidth,
+            NSAttributedString.Key.strokeColor: borderColor
             ])
         
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
@@ -184,12 +184,12 @@ public extension UIImage {
         
         let attributedString = NSAttributedString(string:name.rawValue , attributes: [
             // NSAttributedStringKey.font: UIFont.fontAwesome,
-            NSAttributedStringKey.font: font,
-            NSAttributedStringKey.foregroundColor: textColor,
-            NSAttributedStringKey.backgroundColor: backgroundColor,
-            NSAttributedStringKey.paragraphStyle: paragraph,
-            NSAttributedStringKey.strokeWidth: strokeWidth,
-            NSAttributedStringKey.strokeColor: borderColor
+            NSAttributedString.Key.font: font,
+            NSAttributedString.Key.foregroundColor: textColor,
+            NSAttributedString.Key.backgroundColor: backgroundColor,
+            NSAttributedString.Key.paragraphStyle: paragraph,
+            NSAttributedString.Key.strokeWidth: strokeWidth,
+            NSAttributedString.Key.strokeColor: borderColor
             ])
         
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
